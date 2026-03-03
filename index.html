@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OsagieTech | Enterprise Software Consulting & Web Development</title>
+    <meta name="description" content="OsagieTech - Premium enterprise software sales consulting for financial services and professional web development services. Founded by Osagie Aromose, MBA University of Benin.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .service-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        .stats-counter {
+            font-variant-numeric: tabular-nums;
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #0ea5e9, #f59e0b);
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        }
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(14, 165, 233, 0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .code-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-brand-600 to-brand-800 rounded-lg flex items-center justify-center text-white font-bold text-xl">O</div>
+                        <span class="text-2xl font-bold text-slate-900">Osagie<span class="text-brand-600">Tech</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-slate-700 hover:text-brand-600 font-medium transition">Services</a>
+                    <a href="#about" class="text-slate-700 hover:text-brand-600 font-medium transition">About</a>
+                    <a href="#case-study" class="text-slate-700 hover:text-brand-600 font-medium transition">Case Study</a>
+                    <a href="#web-dev" class="text-slate-700 hover:text-brand-600 font-medium transition">Web Development</a>
+                    <a href="#testimonials" class="text-slate-700 hover:text-brand-600 font-medium transition">Testimonials</a>
+                    <a href="#contact" class="bg-brand-600 text-white px-6 py-2 rounded-full font-medium hover:bg-brand-700 transition shadow-lg hover:shadow-xl">Contact Us</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-brand-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#services" class="block px-3 py-2 text-slate-700 hover:bg-brand-50 rounded-md">Services</a>
+                <a href="#about" class="block px-3 py-2 text-slate-700 hover:bg-brand-50 rounded-md">About</a>
+                <a href="#case-study" class="block px-3 py-2 text-slate-700 hover:bg-brand-50 rounded-md">Case Study</a>
+                <a href="#web-dev" class="block px-3 py-2 text-slate-700 hover:bg-brand-50 rounded-md">Web Development</a>
+                <a href="#contact" class="block px-3 py-2 text-brand-600 font-medium">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900 hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 opacity-95"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-brand-900/50 border border-brand-500/30 text-brand-300 text-sm font-medium mb-8 animate-fade-in">
+                <span class="w-2 h-2 bg-gold-400 rounded-full mr-2 animate-pulse"></span>
+                Founded by Osagie Aromose, MBA University of Benin
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
+                Enterprise Excellence <br>
+                <span class="gradient-text">Dual Expertise</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.1s">
+                Premium software sales consulting for financial services institutions. 
+                World-class WordPress & static website development. Two powerful services, one trusted partner.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.2s">
+                <a href="#services" class="bg-brand-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-700 transition shadow-lg hover:shadow-brand-500/25 flex items-center justify-center gap-2">
+                    <span>Explore Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition backdrop-blur-sm flex items-center justify-center gap-2">
+                    <i class="fas fa-play"></i>
+                    <span>Watch Case Study</span>
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white stats-counter" data-target="42">0</div>
+                    <div class="text-slate-400 text-sm mt-1">Enterprise Deals Closed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white stats-counter" data-target="180">0</div>
+                    <div class="text-slate-400 text-sm mt-1">% Quota Achievement</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white stats-counter" data-target="156">0</div>
+                    <div class="text-slate-400 text-sm mt-1">Websites Delivered</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white stats-counter" data-target="12">0</div>
+                    <div class="text-slate-400 text-sm mt-1">Years Experience</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white/50 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Dual Services Introduction -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Two Specialized Services, One Standard of Excellence</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Whether you're navigating complex enterprise software sales or seeking stunning digital presence, 
+                    OsagieTech delivers transformative results backed by deep expertise and founder-level commitment.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1: Enterprise Consulting -->
+                <div class="service-card rounded-2xl p-8 hover-lift relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-100 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-brand-600 rounded-xl flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Enterprise Software Consulting</h3>
+                        <p class="text-slate-600 mb-6">
+                            Specialized sales consulting for fintech and financial services institutions. 
+                            Proven methodology for complex 12-18 month sales cycles, stakeholder coalition building, 
+                            and transformational deal closure.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-brand-600 mr-3"></i>
+                                Financial services sales strategy
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-brand-600 mr-3"></i>
+                                Complex stakeholder navigation
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-brand-600 mr-3"></i>
+                                Regulatory compliance positioning
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-brand-600 mr-3"></i>
+                                Risk-sharing commercial models
+                            </li>
+                        </ul>
+                        <a href="#enterprise" class="inline-flex items-center text-brand-600 font-semibold hover:text-brand-700">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Web Development -->
+                <div class="service-card rounded-2xl p-8 hover-lift relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-100 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gold-500 rounded-xl flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Web Development</h3>
+                        <p class="text-slate-600 mb-6">
+                            Premium WordPress and static website development for businesses seeking 
+                            exceptional digital presence. From corporate sites to complex web applications, 
+                            we deliver performance-optimized, conversion-focused solutions.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                Custom WordPress development
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                High-performance static sites
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                E-commerce solutions
+                            </li>
+                            <li class="flex items-center text-slate-700">
+                                <i class="fas fa-check-circle text-gold-500 mr-3"></i>
+                                SEO & conversion optimization
+                            </li>
+                        </ul>
+                        <a href="#web-dev" class="inline-flex items-center text-gold-600 font-semibold hover:text-gold-700">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Consulting Deep Dive -->
+    <section id="enterprise" class="py-20 bg-slate-50 code-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <div class="inline-block px-4 py-1 bg-brand-100 text-brand-700 rounded-full text-sm font-semibold mb-4">
+                        Enterprise Consulting
+                    </div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">
+                        Mastering Complex B2B Sales in Financial Services
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6">
+                        Founded by Osagie Aromose, MBA from University of Benin, OsagieTech brings 
+                        battle-tested methodology from closing $4.2M transformational deals to helping 
+                        your team navigate the labyrinth of enterprise financial services sales.
+                    </p>
+                    <p class="text-slate-600 mb-8">
+                        Our approach combines deep discovery, coalition building, and risk-sharing 
+                        strategies that have consistently delivered 180%+ quota achievement in the 
+                        world's most conservative technology adoption environment.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 text-slate-700">
+                            <i class="fas fa-university text-brand-600"></i>
+                            <span class="font-medium">University of Benin MBA</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-700">
+                            <i class="fas fa-award text-brand-600"></i>
+                            <span class="font-medium">12+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-700">
+                            <i class="fas fa-globe text-brand-600"></i>
+                            <span class="font-medium">Global Perspective</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-600 to-brand-800 rounded-2xl transform rotate-3 opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" alt="Enterprise Consulting" class="relative rounded-2xl shadow-2xl w-full object-cover h-96">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-600 rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-600">"Transformed our sales approach"</p>
+                                <p class="font-semibold text-slate-900">Fortune 500 Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Methodology -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 text-2xl mb-6">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Archaeological Discovery</h3>
+                    <p class="text-slate-600">
+                        4-6 month deep discovery phase mapping organizational dynamics, historical traumas, 
+                        and political landscapes before any formal proposal. Quality over velocity.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 text-2xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Coalition Building</h3>
+                    <p class="text-slate-600">
+                        Orchestrating consensus among 30-40 stakeholders with competing priorities. 
+                        Champion development through strategic investment and shared risk.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 text-2xl mb-6">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Risk-Sharing Models</h3>
+                    <p class="text-slate-600">
+                        Creative commercial structures with milestone-based pricing, outcome guarantees, 
+                        and performance-based liability that align incentives and accelerate decisions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Capabilities -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center">Enterprise Consulting Capabilities</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-university text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Financial Services</h4>
+                        <p class="text-sm text-slate-600">Banking, insurance, wealth management expertise</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-balance-scale text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Regulatory Navigation</h4>
+                        <p class="text-sm text-slate-600">OCC, SEC, CFPB compliance positioning</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-network-wired text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Stakeholder Mapping</h4>
+                        <p class="text-sm text-slate-600">Complex organizational navigation</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-chart-pie text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Value Engineering</h4>
+                        <p class="text-sm text-slate-600">Business case & ROI optimization</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-file-contract text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Negotiation Strategy</h4>
+                        <p class="text-sm text-slate-600">Complex multi-party deal structuring</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-cloud text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Partner Orchestration</h4>
+                        <p class="text-sm text-slate-600">AWS, SI, and ecosystem management</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-rocket text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Expansion Strategy</h4>
+                        <p class="text-sm text-slate-600">Land-and-expand revenue growth</p>
+                    </div>
+                    <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-brand-50 transition">
+                        <i class="fas fa-shield-alt text-3xl text-brand-600 mb-4"></i>
+                        <h4 class="font-semibold text-slate-900 mb-2">Risk Mitigation</h4>
+                        <p class="text-sm text-slate-600">Shared-risk commercial models</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="case-study" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 bg-brand-900 border border-brand-500 rounded-full text-brand-300 text-sm font-semibold mb-4">
+                    Featured Case Study
+                </div>
+                <h2 class="text-4xl font-bold mb-4">The Meridian Financial Group Transformation</h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+                    How OsagieTech's founder-led approach closed a $4.2M, 14-month enterprise deal 
+                    and established a blueprint for financial services technology sales.
+                </p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 timeline-line rounded-full hidden md:block"></div>
+                
+                <!-- Phase 1 -->
+                <div class="relative mb-12 md:mb-0">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 md:text-right mb-4 md:mb-0">
+                            <div class="bg-brand-800/50 p-6 rounded-2xl border border-brand-500/30">
+                                <h3 class="text-xl font-bold mb-2">Month 1-4: Deep Discovery</h3>
+                                <p class="text-slate-300 text-sm">
+                                    Archaeological sales process mapping 17 distinct risk systems, 
+                                    organizational trauma from 2019 failure, and political landscape 
+                                    with 37 stakeholders identified.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-600 rounded-full border-4 border-slate-900 flex items-center justify-center z-10 hidden md:flex">
+                            <i class="fas fa-search text-white"></i>
+                        </div>
+                        <div class="md:w-5/12">
+                            <div class="text-3xl font-bold text-brand-400">Discovery</div>
+                            <div class="text-slate-400">Understanding before selling</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="relative mb-12 md:mb-0 md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 order-2 mb-4 md:mb-0">
+                            <div class="bg-brand-800/50 p-6 rounded-2xl border border-brand-500/30">
+                                <h3 class="text-xl font-bold mb-2">Month 5-8: Coalition Building</h3>
+                                <p class="text-slate-300 text-sm">
+                                    Developed CRO Patricia Holloway as champion through roadmap involvement 
+                                    and business case tools. Navigated CTO skepticism via collaborative 
+                                    engineering engagement.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-600 rounded-full border-4 border-slate-900 flex items-center justify-center z-10 hidden md:flex">
+                            <i class="fas fa-users text-white"></i>
+                        </div>
+                        <div class="md:w-5/12 order-1 md:text-right">
+                            <div class="text-3xl font-bold text-brand-400">Champions</div>
+                            <div class="text-slate-400">Strategic relationship investment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="relative mb-12 md:mb-0 md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 md:text-right mb-4 md:mb-0">
+                            <div class="bg-brand-800/50 p-6 rounded-2xl border border-brand-500/30">
+                                <h3 class="text-xl font-bold mb-2">Month 9-12: Competitive Battle</h3>
+                                <p class="text-slate-300 text-sm">
+                                    Asymmetric competition against 15-year incumbent OmniCorp. 
+                                    Business outcome bake-offs, site visits to African reference customers, 
+                                    and ecosystem orchestration with AWS and Veritas Advisory.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-brand-600 rounded-full border-4 border-slate-900 flex items-center justify-center z-10 hidden md:flex">
+                            <i class="fas fa-chess text-white"></i>
+                        </div>
+                        <div class="md:w-5/12">
+                            <div class="text-3xl font-bold text-brand-400">Competition</div>
+                            <div class="text-slate-400">Disruption strategy execution</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="relative md:mt-12">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 order-2 mb-4 md:mb-0">
+                            <div class="bg-gold-600/20 p-6 rounded-2xl border border-gold-500/30">
+                                <h3 class="text-xl font-bold mb-2 text-gold-400">Month 13-14: Close & Expand</h3>
+                                <p class="text-slate-300 text-sm">
+                                    $4.2M contract with 40% milestone-based pricing. Post-sale founder 
+                                    engagement through implementation. 78% reporting time reduction achieved. 
+                                    $2.6M expansion to additional divisions within 18 months.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gold-500 rounded-full border-4 border-slate-900 flex items-center justify-center z-10 hidden md:flex">
+                            <i class="fas fa-trophy text-white"></i>
+                        </div>
+                        <div class="md:w-5/12 order-1 md:text-right">
+                            <div class="text-3xl font-bold text-gold-400">$6.8M Total</div>
+                            <div class="text-slate-400">Transformation delivered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="mt-16 grid md:grid-cols-4 gap-6">
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 text-center">
+                    <div class="text-4xl font-bold text-brand-400 mb-2">$4.2M</div>
+                    <div class="text-slate-400 text-sm">Initial Contract Value</div>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 text-center">
+                    <div class="text-4xl font-bold text-brand-400 mb-2">14</div>
+                    <div class="text-slate-400 text-sm">Month Sales Cycle</div>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 text-center">
+                    <div class="text-4xl font-bold text-brand-400 mb-2">37</div>
+                    <div class="text-slate-400 text-sm">Stakeholders Navigated</div>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 text-center">
+                    <div class="text-4xl font-bold text-gold-400 mb-2">180%</div>
+                    <div class="text-slate-400 text-sm">Quota Achievement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Development Section -->
+    <section id="web-dev" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl transform -rotate-3 opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Web Development" class="relative rounded-2xl shadow-2xl w-full object-cover h-96">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gold-500 rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-600">"Exceptional quality"</p>
+                                <p class="font-semibold text-slate-900">156+ Sites Delivered</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-block px-4 py-1 bg-gold-100 text-gold-700 rounded-full text-sm font-semibold mb-4">
+                        Web Development
+                    </div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">
+                        Premium Websites That Convert
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6">
+                        Beyond enterprise consulting, OsagieTech delivers world-class WordPress and 
+                        static website development. We combine technical excellence with conversion 
+                        optimization to create digital experiences that drive business results.
+                    </p>
+                    <p class="text-slate-600 mb-8">
+                        Whether you need a sophisticated corporate presence, high-performance marketing 
+                        site, or complex web application, our development team brings the same rigor 
+                        and attention to detail that defines our consulting practice.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 text-slate-700">
+                            <i class="fab fa-wordpress text-gold-600 text-xl"></i>
+                            <span class="font-medium">WordPress Experts</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-700">
+                            <i class="fas fa-bolt text-gold-600 text-xl"></i>
+                            <span class="font-medium">Static Site Generators</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-700">
+                            <i class="fas fa-shopping-cart text-gold-600 text-xl"></i>
+                            <span class="font-medium">E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Dev Services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-lg transition border border-slate-100">
+                    <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Custom WordPress</h3>
+                    <p class="text-slate-600 mb-4">
+                        Bespoke WordPress themes and plugins tailored to your brand. 
+                        Custom post types, advanced custom fields, and performance optimization 
+                        for enterprise-grade WordPress solutions.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Custom theme development</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Plugin customization</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>WooCommerce integration</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Multisite networks</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-lg transition border border-slate-100">
+                    <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Static Websites</h3>
+                    <p class="text-slate-600 mb-4">
+                        Blazing-fast static sites built with modern generators like Jekyll, Hugo, 
+                        or 11ty. Perfect for portfolios, documentation, and marketing sites 
+                        requiring maximum performance and security.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>JAMstack architecture</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Headless CMS integration</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>CDN deployment</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>99.9% uptime guarantee</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-lg transition border border-slate-100">
+                    <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">E-commerce</h3>
+                    <p class="text-slate-600 mb-4">
+                        Full-featured online stores with secure payment processing, inventory 
+                        management, and conversion optimization. WooCommerce, Shopify, or 
+                        custom solutions tailored to your business model.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Payment gateway integration</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Inventory management</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Abandoned cart recovery</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Multi-currency support</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-lg transition border border-slate-100">
+                    <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">SEO Optimization</h3>
+                    <p class="text-slate-600 mb-4">
+                        Technical SEO foundation with schema markup, Core Web Vitals optimization, 
+                        and content strategy. Rank higher and attract qualified organic traffic 
+                        to grow your business sustainably.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Technical SEO audit</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Schema markup implementation</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Core Web Vitals optimization</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Content strategy</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-lg transition border border-slate-100">
+                    <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Responsive Design</h3>
+                    <p class="text-slate-600 mb-4">
+                        Mobile-first designs that look stunning on every device. From smartphones 
+                        to 4K displays, your website will provide exceptional user experience 
+                        that drives engagement and conversions.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Mobile-first approach</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Cross-browser testing</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Accessibility compliance</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Performance optimization</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl hover:shadow-lg transition border border-slate-100">
+                    <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Maintenance & Support</h3>
+                    <p class="text-slate-600 mb-4">
+                        Ongoing care packages including security updates, performance monitoring, 
+                        content updates, and technical support. Keep your site secure, fast, 
+                        and up-to-date without lifting a finger.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>24/7 security monitoring</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Regular backups</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Performance reporting</li>
+                        <li><i class="fas fa-check text-gold-500 mr-2"></i>Priority support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="bg-slate-900 rounded-2xl p-8 md:p-12 text-white">
+                <h3 class="text-2xl font-bold mb-8 text-center">Technologies We Master</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-wordpress text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">WordPress</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-php text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">PHP</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-js text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">JavaScript</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-react text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">React</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-vuejs text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">Vue.js</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-node text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">Node.js</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-python text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">Python</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fas fa-database text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">MySQL</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-aws text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">AWS</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-docker text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">Docker</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fab fa-git-alt text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">Git</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                        <i class="fas fa-server text-4xl text-gold-400 mb-2"></i>
+                        <div class="text-sm">CDN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block px-4 py-1 bg-brand-100 text-brand-700 rounded-full text-sm font-semibold mb-4">
+                        About OsagieTech
+                    </div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">
+                        Founded on Excellence, <br>
+                        Built on Results
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6">
+                        OsagieTech was founded by Osagie Aromose, bringing together deep expertise 
+                        in enterprise software sales and premium web development. Our dual-service 
+                        model reflects a fundamental belief: transformative business results require 
+                        both strategic insight and technical excellence.
+                    </p>
+                    <p class="text-slate-600 mb-8">
+                        With an MBA from the University of Benin and over 12 years of experience 
+                        spanning Nigerian entrepreneurship and global enterprise technology, Osagie 
+                        brings unique perspective to every engagement. Our approach combines the 
+                        relationship-centered business philosophy of emerging markets with the 
+                        rigorous execution standards of Fortune 500 environments.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center text-brand-600 flex-shrink-0">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">MBA, University of Benin</h4>
+                                <p class="text-slate-600 text-sm">Strategic management and international business focus, graduating with distinction.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center text-brand-600 flex-shrink-0">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Founder-Led Execution</h4>
+                                <p class="text-slate-600 text-sm">Direct involvement from Osagie Aromose in every major engagement, ensuring founder-level commitment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center text-brand-600 flex-shrink-0">
+                                <i class="fas fa-globe-africa"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Global Perspective</h4>
+                                <p class="text-slate-600 text-sm">Experience across African, European, and North American markets bringing diverse insights.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="inline-flex items-center bg-brand-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-700 transition shadow-lg">
+                        Work With Us <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop" alt="Osagie Aromose" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                            <div class="bg-brand-600 p-6 rounded-2xl text-white">
+                                <div class="text-3xl font-bold mb-1">156+</div>
+                                <div class="text-sm opacity-90">Websites Delivered</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mt-8">
+                            <div class="bg-gold-500 p-6 rounded-2xl text-white">
+                                <div class="text-3xl font-bold mb-1">$42M+</div>
+                                <div class="text-sm opacity-90">Enterprise Value Closed</div>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=500&fit=crop" alt="Team working" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Client Success Stories</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    From enterprise software transformations to stunning digital experiences, 
+                    hear from clients who have experienced the OsagieTech difference.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">
+                        "OsagieTech's consulting transformed our approach to enterprise sales. 
+                        The archaeological discovery methodology and coalition building strategies 
+                        helped us close a deal we had been pursuing for two years."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 font-bold">PC</div>
+                        <div>
+                            <div class="font-semibold text-slate-900">Patricia Chen</div>
+                            <div class="text-sm text-slate-500">VP Sales, FinTech Solutions Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">
+                        "The website OsagieTech built for us doesn't just look beautiful—it converts. 
+                        Our lead generation increased 340% in the first quarter after launch. 
+                        Exceptional technical execution."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center text-gold-600 font-bold">MR</div>
+                        <div>
+                            <div class="font-semibold text-slate-900">Michael Roberts</div>
+                            <div class="text-sm text-slate-500">CEO, Nexus Consulting Group</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">
+                        "Working with Osagie on our risk intelligence platform was transformative. 
+                        His founder-level commitment and deep understanding of financial services 
+                        regulatory complexity made the difference."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 font-bold">PH</div>
+                        <div>
+                            <div class="font-semibold text-slate-900">Patricia Holloway</div>
+                            <div class="text-sm text-slate-500">CRO, Meridian Financial Group</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">
+                        "OsagieTech built our e-commerce platform from scratch. The attention to 
+                        detail, performance optimization, and ongoing support have been outstanding. 
+                        Sales are up 200% year-over-year."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center text-gold-600 font-bold">SK</div>
+                        <div>
+                            <div class="font-semibold text-slate-900">Sarah Kimani</div>
+                            <div class="text-sm text-slate-500">Founder, AfriStyle Boutique</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">
+                        "The risk-sharing commercial model Osagie proposed was innovative and 
+                        ultimately decisive. He put his fees at risk alongside our reputation, 
+                        demonstrating genuine partnership commitment."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 font-bold">RM</div>
+                        <div>
+                            <div class="font-semibold text-slate-900">Robert Martinez</div>
+                            <div class="text-sm text-slate-500">CFO, Meridian Financial Group</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                        <i class="fas fa-star text-gold-400"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">
+                        "Our new WordPress site loads in under 1 second and ranks #1 for our 
+                        target keywords. OsagieTech's technical SEO expertise and development 
+                        quality exceeded all expectations."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center text-gold-600 font-bold">JA</div>
+                        <div>
+                            <div class="font-semibold text-slate-900">James Anderson</div>
+                            <div class="text-sm text-slate-500">Marketing Director, TechFlow</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-600 to-brand-800 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-brand-100 mb-8 max-w-2xl mx-auto">
+                Whether you're navigating complex enterprise sales or seeking exceptional digital presence, 
+                OsagieTech delivers results that exceed expectations.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-white text-brand-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-50 transition shadow-xl">
+                    Schedule Consultation
+                </a>
+                <a href="mailto:hello@osagietech.com" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition">
+                    hello@osagietech.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">Let's Build Something Great Together</h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Ready to discuss your enterprise sales challenges or web development needs? 
+                        Get in touch and let's explore how OsagieTech can drive transformative results for your business.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center text-brand-600">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-slate-900">Email</div>
+                                <div class="text-slate-600">hello@osagietech.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center text-brand-600">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-slate-900">Phone</div>
+                                <div class="text-slate-600">+1 (555) 123-4567</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center text-brand-600">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-slate-900">Location</div>
+                                <div class="text-slate-600">Remote, NYC Metro Preferred</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-brand-600 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-brand-600 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-brand-600 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-brand-600 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="john@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Service Interest</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition">
+                                <option>Select a service...</option>
+                                <option>Enterprise Sales Consulting</option>
+                                <option>WordPress Development</option>
+                                <option>Static Website Development</option>
+                                <option>E-commerce Solutions</option>
+                                <option>SEO Optimization</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-600 text-white py-4 rounded-lg font-semibold hover:bg-brand-700 transition shadow-lg">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-brand-600 to-brand-800 rounded-lg flex items-center justify-center text-white font-bold text-xl">O</div>
+                        <span class="text-2xl font-bold text-white">Osagie<span class="text-brand-400">Tech</span></span>
+                    </div>
+                    <p class="text-slate-400 mb-4 max-w-md">
+                        Premium enterprise software consulting and web development services. 
+                        Founded by Osagie Aromose, MBA University of Benin.
+                    </p>
+                    <p class="text-sm text-slate-500">
+                        Delivering transformative results through strategic insight and technical excellence.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#enterprise" class="hover:text-brand-400 transition">Enterprise Consulting</a></li>
+                        <li><a href="#web-dev" class="hover:text-brand-400 transition">WordPress Development</a></li>
+                        <li><a href="#web-dev" class="hover:text-brand-400 transition">Static Websites</a></li>
+                        <li><a href="#web-dev" class="hover:text-brand-400 transition">E-commerce</a></li>
+                        <li><a href="#web-dev" class="hover:text-brand-400 transition">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-brand-400 transition">About Us</a></li>
+                        <li><a href="#case-study" class="hover:text-brand-400 transition">Case Studies</a></li>
+                        <li><a href="#testimonials" class="hover:text-brand-400 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-brand-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-slate-500">
+                    © 2024 OsagieTech. All rights reserved. Founded by Osagie Aromose, MBA University of Benin.
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-500 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-slate-500 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Animated counters
+        const counters = document.querySelectorAll('.stats-counter');
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        };
+
+        // Intersection Observer for counters
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.stats-counter');
+        if (statsSection) {
+            observer.observe(statsSection.parentElement.parentElement);
+        }
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            e.target.reset();
+        });
+
+        // Add animation classes on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.hover-lift, .service-card');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check
+    </script>
+</body>
+</html>
