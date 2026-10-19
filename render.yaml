@@ -1,0 +1,30 @@
+# Render.com Blueprint (native, no Docker).
+# Docs: https://render.com/docs/blueprint-spec
+# Usage: New -> Blueprint -> point at this repo, or create the service manually
+#        with the values shown below.
+services:
+  - type: web
+    name: pacific-crest-estates-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "*"   # set to your frontend URL in production
+      - key: FRONTEND_URL
+        value: "https://jolly-beijinho-1f918a.netlify.app"   # your deployed frontend URL
+      - key: HOLDING_DEPOSIT_USD
+        value: "1000.00"
+    # Optional persistent disk so SQLite survives deploys. If you use
+    # Render Postgres (DATABASE_URL) instead, you can remove this.
+    disk:
+      name: estate-db
+      mountPath: /var/data
+      sizeGB: 1

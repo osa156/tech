@@ -1,0 +1,10 @@
+# Pacific Crest Estates API — Python dependencies (Render.com compatible)
+# Render build command: pip install -r requirements.txt
+# Render start command : gunicorn app:app
+Flask==3.0.3
+Flask-Cors==4.0.1
+Flask-SQLAlchemy==3.1.1
+gunicorn==22.0.0
+# Postgres driver — only needed if you use Render PostgreSQL (DATABASE_URL).
+# Safe to include always; it is simply unused when on SQLite.
+psycopg2-binary==2.9.9
